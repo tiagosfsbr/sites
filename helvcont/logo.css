@@ -1,0 +1,4 @@
+.brand{display:flex;align-items:center;padding:6px 12px;border:1px solid rgba(240,219,167,.45);border-radius:12px;background:linear-gradient(135deg,#fffdf8,#ead9ae);box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.brand img,.footerLogo{width:190px;height:auto;max-height:62px;object-fit:contain;object-position:left center;mix-blend-mode:normal}
+.footerLogo{padding:7px 10px;border-radius:12px;background:linear-gradient(135deg,#fffdf8,#ead9ae);box-shadow:0 8px 22px rgba(0,0,0,.2)}
+@media(max-width:620px){.brand{padding:5px 9px}.brand img{width:150px;height:auto;max-height:52px}}
