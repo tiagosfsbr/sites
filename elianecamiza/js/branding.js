@@ -1,6 +1,6 @@
 (() => {
   const from = /UpCont|UPCONT/g;
-  const to = 'Eliane Camiza';
+  const to = 'ECamiza Contabilidade';
   const replace = value => typeof value === 'string' ? value.replace(from, to) : value;
   const replaceLocation = value => {
     if (typeof value !== 'string') return value;
@@ -44,20 +44,21 @@
   if (address) address.innerHTML = 'R. Vilaça, 195 — 2º andar, Sala 25<br>Centro — São José dos Campos/SP<br>CEP 12210-000';
   const map = document.querySelector('.locMap iframe');
   if (map) {
-    map.title = 'Mapa da localização da Eliane Camiza em São José dos Campos/SP';
+    map.title = 'Mapa da localização da ECamiza Contabilidade em São José dos Campos/SP';
     map.src = 'https://maps.google.com/maps?q=R.%20Vila%C3%A7a%2C%20195%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012210-000&z=17&hl=pt-BR&output=embed';
   }
   const destination = 'R.%20Vila%C3%A7a%2C%20195%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012210-000';
+  const placeUrl = 'https://www.google.com/maps/place/Escrit%C3%B3rio+Cont%C3%A1bil+e+Prestador+de+Servi%C3%A7os+Diversos+E+Camiza/@-23.1817835,-45.8845105,727m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94cc4b9af742df61:0xa45daf7508b703da!8m2!3d-23.1817835!4d-45.8845105!16s%2Fg%2F11h6v1qp8k';
   const directions = document.querySelector('.locActions a:first-child');
   const mapsLink = document.querySelector('.locActions a:last-child');
   if (directions) directions.href = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
-  if (mapsLink) mapsLink.href = `https://www.google.com/maps/search/?api=1&query=${destination}`;
+  if (mapsLink) mapsLink.href = placeUrl;
   document.addEventListener('submit', event => {
     if (event.target.id !== 'leadForm') return;
     event.preventDefault();
     event.stopImmediatePropagation();
     const value = id => document.getElementById(id)?.value.trim();
-    const message = `Olá, Eliane Camiza! Meu nome é ${value('nome')}.\nWhatsApp: ${value('telefone')}\nEmpresa: ${value('empresa') || 'Não informado'}\nFaturamento: ${value('faturamento')}\nNecessidade: ${value('necessidade') || 'Não informado'}`;
+    const message = `Olá, ECamiza Contabilidade! Meu nome é ${value('nome')}.\nWhatsApp: ${value('telefone')}\nEmpresa: ${value('empresa') || 'Não informado'}\nFaturamento: ${value('faturamento')}\nNecessidade: ${value('necessidade') || 'Não informado'}`;
     window.open('https://wa.me/5546991212740?text=' + encodeURIComponent(message), '_blank', 'noopener');
   }, true);
   new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(node => {
