@@ -41,7 +41,19 @@
   applyBrand(document.documentElement);
   document.title = replace(document.title);
   const address = document.querySelector('.locCard address');
-  if (address) address.innerHTML = 'R. Vilaça, 195 — 2º andar, Sala 25<br>Centro — São José dos Campos/SP<br>CEP 12210-000';
+  if (address) address.innerHTML = 'R. Vilaça, 195 — 2º andar, Sala 25<br>Centro — São José dos Campos/SP<br>CEP 12210-000<br><small style="color:var(--gold);display:block;margin-top:6px">Atendimento 100% digital · Presencial sob agendamento prévio</small>';
+  const locPhone = document.querySelector('.locInfo a[href^="tel:"]');
+  if (locPhone) {
+    locPhone.href = 'tel:+5512988421571';
+    locPhone.textContent = '(12) 98842-1571';
+  }
+  const locWa = document.querySelector('.locInfo a[href*="wa.me"]');
+  if (locWa) {
+    locWa.href = 'https://wa.me/5512988421571';
+    locWa.textContent = '(12) 98842-1571';
+  }
+  const locHours = document.querySelector('.locInfo li:last-child span');
+  if (locHours) locHours.textContent = 'Seg a Qui: 10h às 17h | Sex: 10h às 16h';
   const map = document.querySelector('.locMap iframe');
   if (map) {
     map.title = 'Mapa da localização da ECamiza Contabilidade em São José dos Campos/SP';
@@ -59,7 +71,7 @@
     event.stopImmediatePropagation();
     const value = id => document.getElementById(id)?.value.trim();
     const message = `Olá, ECamiza Contabilidade! Meu nome é ${value('nome')}.\nWhatsApp: ${value('telefone')}\nEmpresa: ${value('empresa') || 'Não informado'}\nFaturamento: ${value('faturamento')}\nNecessidade: ${value('necessidade') || 'Não informado'}`;
-    window.open('https://wa.me/5546991212740?text=' + encodeURIComponent(message), '_blank', 'noopener');
+    window.open('https://wa.me/5512988421571?text=' + encodeURIComponent(message), '_blank', 'noopener');
   }, true);
   new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(node => {
     if (node.nodeType === Node.TEXT_NODE) node.nodeValue = replace(node.nodeValue);
